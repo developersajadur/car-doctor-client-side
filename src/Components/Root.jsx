@@ -6,8 +6,10 @@ import Footer from "./Home/Footer";
 const Root = () => {
     return (
         <div>
+            <div className="container mx-auto">
             <Header></Header>
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

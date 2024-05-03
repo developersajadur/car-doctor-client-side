@@ -1,0 +1,21 @@
+
+  #navLg li a.active{
+    border: 1px solid #FF3811;
+    background-color: transparent;
+    color: #FF3811;
+   }
+   #navLg li a:active{
+    border: 1px solid #E7A500;
+    background-color: transparent;
+    color: #FF3811;
+   }
+   #nav li a.active{
+     border: 1px solid #E7A500;
+     background-color: transparent;
+     color: #FF3811;
+   }
+   #nav li a:active{
+     border: 1px solid #FF3811;
+     background-color: transparent;
+     color: #FF3811;
+   }
