@@ -6,12 +6,11 @@ const ServicesHome = () => {
     const [services , setServices] = useState([]);
     
     useEffect(() => {
-        fetch("/public/JsonData/services.json")
+        fetch("http://localhost:5000/services")
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
     
-    console.log(services);
 
     return (
         <div className="mt-40 text-center">
