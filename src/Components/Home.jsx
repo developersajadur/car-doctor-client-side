@@ -1,5 +1,6 @@
 import AboutHomePage from "./Home/AboutHomePage";
 import Address from "./Home/Address";
+import ChooseUs from "./Home/ChooseUs";
 import Slider from "./Home/Slider";
 
 
@@ -9,6 +10,7 @@ const Home = () => {
             <Slider></Slider>
             <AboutHomePage></AboutHomePage>
             <Address></Address>
+            <ChooseUs></ChooseUs>
         </div>
     );
 };
