@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Service from "../Services/Service";
+import { NavLink } from "react-router-dom";
 
 const ServicesHome = () => {
     const [services , setServices] = useState([]);
@@ -20,7 +21,7 @@ const ServicesHome = () => {
             <p className="text-[#737373]">the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-10 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
                 {
                     services.map( service => <Service
                     key={service._id}
@@ -28,6 +29,8 @@ const ServicesHome = () => {
                     ></Service>)
                 }
             </div>
+
+            <NavLink to="/services" className="btn w-fit text-[#FF3811] border-[#FF3811] bg-transparent mt-10">More Services</NavLink>
         </div>
     );
 };
