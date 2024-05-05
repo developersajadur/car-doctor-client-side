@@ -15,14 +15,14 @@ const ServiceDetails = () => {
       src="/public/images/checkout/checkout.png"
       className="w-full rounded-lg lg:h-72"
     />
-    <div className="absolute flex flex-col rounded-lg h-full items-center justify-center left-0 top-0 gap-8 bg-gradient-to-r lg:pl-28 from-[#151515] to-[rgba(21, 21, 21, 0)]">
+    <div className="absolute flex flex-col rounded-lg h-full items-center justify-center left-0 top-0 gap-8 bg-gradient-to-r pl-16 lg:pl-28 from-[#151515] to-[rgba(21, 21, 21, 0)]">
       <h1 className="text-3xl lg:text-6xl text-white font-bold">Service Details</h1>
       </div>
     </div>
 {/* -------------------------------- details ------------------------ */}
-<div className="flex gap-10 w-full">
+<div className="flex flex-col lg:flex-row gap-10 w-full">
     {/* -------------------------Left side ---------------------- */}
-    <div className="lg:w-[60%] flex flex-col gap-5">
+    <div className="w-full lg:w-[60%] flex flex-col gap-5">
         <img src={service?.img} alt="" className="rounded-lg w-full" />
         <h1 className="text-2xl lg:text-5xl font-bold">{service?.title}</h1>
         <p className="text-[#737373] text-lg">{service?.description}</p>
@@ -75,7 +75,7 @@ const ServiceDetails = () => {
 
 
     {/* -------------------------Left side ---------------------- */}
-    <div className="lg:w-[40%] flex flex-col gap-4">
+    <div className=" w-full lg:w-[40%] flex flex-col gap-4">
             <div className="bg-[#F3F3F3] p-10 flex flex-col rounded-lg gap-5">
                 <h2 className="text-4xl font-bold">Services</h2>
                 <Link to="" className="flex justify-between items-center p-6 rounded-lg text-black hover:text-white bg-white hover:bg-[#FF3811]">
@@ -136,7 +136,7 @@ const ServiceDetails = () => {
             </div>
             {/* ------------------------------------- */}
             <h1 className="text-3xl mt-5 lg:text-5xl font-bold">Price ${service?.price}</h1>
-            <Link to="" className="btn w-full mt-5 h-fit  bg-[#FF3811] text-2xl font-bold text-white px-10 py-5">Proceed Checkout</Link>
+            <Link to={`/check-out/${service._id}`} className="btn w-full mt-5 h-fit  bg-[#FF3811] text-2xl font-bold text-white px-10 py-5">Proceed Checkout</Link>
     </div>
 </div>
 

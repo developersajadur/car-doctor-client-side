@@ -16,6 +16,8 @@ import Register from './Components/Forms/Login/Register';
 import Login from './Components/Forms/Login/Login';
 import AuthProvider from './Components/Providers/AuthProvider';
 import ServiceDetails from './Components/Services/ServiceDetails';
+import CheckOut from './Components/Forms/Login/CheckOut';
+import MyCard from './Components/Card/MyCard';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,15 @@ const router = createBrowserRouter([
         element: <ServiceDetails></ServiceDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         
+      },
+      {
+        path: "/check-out/:id",
+        element:<CheckOut></CheckOut>,
+        loader:({params}) => fetch(`http://localhost:5000/service/check-out/${params.id}`)
+      },
+      {
+        path: "/card",
+        element:<MyCard></MyCard>
       }
     ]
   },
