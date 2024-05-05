@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Service from "../Services/Service";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ServicesHome = () => {
     const [services , setServices] = useState([]);
@@ -29,7 +29,7 @@ const ServicesHome = () => {
                 }
             </div>
 
-            <NavLink to="/services" className="btn w-fit text-[#FF3811] border-[#FF3811] bg-transparent mt-10">More Services</NavLink>
+            <Link to="/services" className="btn w-fit text-[#FF3811] border-[#FF3811] bg-transparent mt-10">More Services</Link>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import {  Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 const Team = () => {
     return (
@@ -31,17 +31,17 @@ const Team = () => {
                         },
                     }
                 }
-                cssMode={true}
+               //  cssMode={true}
                 navigation={false}
                 slidesPerView={3}
-                spaceBetween={30}
+                spaceBetween={20}
                 centeredSlides={true}
                 pagination={false}
                 loop={true}
                 mousewheel={true}
-                autoplay={{ delay: 5500, disableOnInteraction: false }}
+               //  autoplay={{ delay: 5500, disableOnInteraction: false }}
                 keyboard={true}
-                modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
+                modules={[ Navigation, Pagination, Mousewheel, Keyboard]}
                 className="mySwiper h-fit sm:mt-5"
         >
             {/* -------- slider 1 -------------------- */}

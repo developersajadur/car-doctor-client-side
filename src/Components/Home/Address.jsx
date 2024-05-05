@@ -4,7 +4,7 @@ import { MdPermPhoneMsg } from "react-icons/md";
 
 const Address = () => {
     return (
-        <div className="bg-black py-10 px-5 flex flex-col lg:flex-row gap-10 lg:gap-24 mt-20">
+        <div className="bg-black py-10 px-5 flex flex-col rounded-2xl lg:flex-row gap-10 lg:gap-24 mt-20">
        {/* ---------------- service -1 ---------------------- */}
        <div className=" flex gap-2">
             <FcCalendar className="text-7xl" />
