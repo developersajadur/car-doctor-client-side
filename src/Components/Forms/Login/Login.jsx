@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {Link,  useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
     const { signInUser, googleLogin, facebookLogin } = useContext(AuthContext);
@@ -18,6 +19,7 @@ const Login = () => {
                 if (result.user) {
                     toast.success('Login successful');
                     navigate(location?.state || "/");
+
                 }
             })
             .catch(error => {
@@ -33,20 +35,31 @@ const Login = () => {
         handleSocialLogin(facebookLogin);
     };
 
-
-
     const onSubmit = (data) => {
+        const email = data.email;
         signInUser(data.email, data.password)
             .then((result) => {
-                if (result.user) {
-                    toast.success('Login successful');
-                    navigate(location?.state || "/");
+                if (result?.user) {
+                    const user = { email };
+                    axios.post("http://localhost:5000/jwt", user, {
+                        withCredentials: true,
+                    })
+                    .then((result) => {
+                        if (result?.data?.success) {
+                            toast.success('Login successful');
+                            navigate(location?.state || "/");
+                        }
+                    })
+                    .catch((error) => {
+                        toast.error(error.message);
+                    });
                 }
             })
-            .catch(error => {
+            .catch((error) => {
                 toast.error(error.message);
             });
     };
+    
     return (
         <div className="flex gap-10">
         <div className="w-1/2 hidden lg:block">
